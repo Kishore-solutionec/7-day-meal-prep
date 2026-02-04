@@ -2050,6 +2050,84 @@ p {
    Responsive Design - Enhanced
    ========================================== */
 
+/* Optimized for 1920x1080 Full HD displays */
+@media (min-width: 1600px) and (max-height: 1000px) {
+    .app-header {
+        padding: var(--space-sm) var(--space-lg);
+    }
+
+    .app-title {
+        font-size: var(--text-2xl);
+    }
+
+    .app-subtitle {
+        font-size: var(--text-xs);
+    }
+
+    .tab-navigation {
+        padding: var(--space-xs);
+        margin-bottom: var(--space-sm);
+    }
+
+    .tab-btn {
+        padding: var(--space-xs) var(--space-md);
+        font-size: var(--text-xs);
+    }
+
+    .glass-card {
+        padding: var(--space-sm);
+    }
+
+    .card-header {
+        margin-bottom: var(--space-xs);
+        padding-bottom: var(--space-xs);
+    }
+
+    .card-title {
+        font-size: var(--text-lg);
+    }
+
+    .card-subtitle {
+        font-size: var(--text-xs);
+    }
+
+    .calendar-layout {
+        gap: var(--space-sm);
+    }
+
+    .recipe-sidebar {
+        max-height: calc(100vh - 180px);
+    }
+
+    .sidebar-header h3 {
+        font-size: var(--text-base);
+    }
+
+    .calendar-grid {
+        gap: var(--space-xs);
+        margin-top: var(--space-xs);
+    }
+
+    .day-column {
+        min-height: 280px;
+        padding: var(--space-sm);
+    }
+
+    .day-header {
+        font-size: var(--text-xs);
+        padding: var(--space-xs);
+    }
+
+    .day-calories {
+        font-size: 0.65rem;
+    }
+
+    .app-footer {
+        padding: var(--space-sm) !important;
+        margin-top: var(--space-sm) !important;
+    }
+}
+
 @media (max-width: 1400px) {
     .calendar-grid {
         grid-template-columns: repeat(4, 1fr);
