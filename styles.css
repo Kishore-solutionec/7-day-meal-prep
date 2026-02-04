@@ -2439,6 +2439,104 @@ p {
         padding: var(--space-sm) !important;
         margin-top: var(--space-sm) !important;
     }
+
+    /* Dashboard Tab Fixes */
+    .dashboard-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-sm);
+        margin-top: var(--space-sm);
+    }
+
+    .stat-card {
+        padding: var(--space-sm);
+    }
+
+    .stat-value {
+        font-size: var(--text-2xl);
+    }
+
+    .stat-label {
+        font-size: var(--text-xs);
+        margin-bottom: var(--space-xs);
+    }
+
+    .chart-container {
+        margin-top: var(--space-sm);
+        padding: var(--space-sm);
+    }
+
+    .bar-chart {
+        height: 150px;
+        padding: var(--space-sm) 0;
+    }
+
+    .glass-card-sm {
+        margin-top: var(--space-sm) !important;
+    }
+
+    /* Recipes Tab Fixes */
+    .recipe-browser {
+        max-height: calc(100vh - 220px);
+        overflow: auto;
+    }
+
+    .recipe-filters {
+        gap: var(--space-xs);
+        padding: var(--space-xs);
+    }
+
+    .filter-section {
+        margin-bottom: var(--space-xs);
+    }
+
+    .recipe-list.grid-view {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .recipe-card {
+        padding: var(--space-sm);
+    }
+
+    .recipe-name {
+        font-size: var(--text-sm);
+    }
+
+    /* Timeline Tab Fixes */
+    .timeline-container {
+        max-height: calc(100vh - 220px);
+        overflow: auto;
+        margin: var(--space-sm) auto;
+    }
+
+    .timeline-item {
+        margin-bottom: var(--space-md);
+    }
+
+    .timeline-content {
+        padding: var(--space-sm);
+    }
+
+    /* Shopping Tab Fixes */
+    .shopping-categories {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-sm);
+        max-height: calc(100vh - 280px);
+        overflow: auto;
+    }
+
+    .category-section {
+        padding: var(--space-sm);
+    }
+
+    .category-header {
+        margin-bottom: var(--space-sm);
+        padding-bottom: var(--space-xs);
+    }
+
+    .ingredient-item {
+        padding: var(--space-xs);
+    }
 }
 
 @media (max-width: 1400px) {
