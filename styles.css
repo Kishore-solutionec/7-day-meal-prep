@@ -2404,10 +2404,18 @@ p {
         font-size: var(--text-xs);
     }
 
+    .app-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: var(--space-xs);
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
+    }
+
     .calendar-layout {
-        gap: var(--space-xs);
-        grid-template-columns: 220px 1fr;
-        /* Reduce sidebar width slightly */
+        gap: 8px;
+        grid-template-columns: 190px minmax(0, 1fr);
+        /* Tighter sidebar, flexible content */
     }
 
     .recipe-sidebar {
@@ -2419,11 +2427,13 @@ p {
     }
 
     .calendar-grid {
-        gap: 6px;
-        /* Tighter gap */
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        /* Force equal width, allow shrinking */
+        gap: 4px;
         margin-top: var(--space-xs);
-        padding-right: 2px;
-        /* Prevent edge cutoff */
+        padding-right: 0;
+        width: 100%;
     }
 
     .day-column {
