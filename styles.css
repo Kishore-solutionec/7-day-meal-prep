@@ -1033,7 +1033,7 @@ p {
     border-radius: var(--radius-xl);
     padding: var(--space-lg);
     border: 2px dashed hsla(0, 0%, 100%, 0.1);
-    min-height: 450px;
+    min-height: 280px;
     transition: all var(--transition-base);
     position: relative;
 }
