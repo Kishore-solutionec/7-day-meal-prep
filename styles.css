@@ -2405,39 +2405,66 @@ p {
     }
 
     .calendar-layout {
-        gap: var(--space-sm);
+        gap: var(--space-xs);
+        grid-template-columns: 220px 1fr;
+        /* Reduce sidebar width slightly */
     }
 
     .recipe-sidebar {
-        max-height: calc(100vh - 180px);
+        max-height: calc(100vh - 160px);
     }
 
     .sidebar-header h3 {
-        font-size: var(--text-base);
+        font-size: var(--text-sm);
     }
 
     .calendar-grid {
-        gap: var(--space-xs);
+        gap: 6px;
+        /* Tighter gap */
         margin-top: var(--space-xs);
+        padding-right: 2px;
+        /* Prevent edge cutoff */
     }
 
     .day-column {
-        min-height: 280px;
-        padding: var(--space-sm);
-    }
-
-    .day-header {
-        font-size: var(--text-xs);
+        min-height: 250px;
         padding: var(--space-xs);
     }
 
+    .day-header {
+        font-size: 11px;
+        /* Smaller header */
+        padding: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
     .day-calories {
-        font-size: 0.65rem;
+        font-size: 10px;
+    }
+
+    /* Make recipe cards in calendar smaller */
+    .day-column .recipe-card {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
+
+    .day-column .recipe-name {
+        font-size: 11px;
+        line-height: 1.3;
+        white-space: normal;
+        /* Allow wrapping */
+        overflow: visible;
+    }
+
+    .day-column .recipe-meta {
+        font-size: 9px;
     }
 
     .app-footer {
-        padding: var(--space-sm) !important;
-        margin-top: var(--space-sm) !important;
+        padding: 4px !important;
+        margin-top: 4px !important;
+        font-size: 10px;
     }
 
     /* Dashboard Tab Fixes */
