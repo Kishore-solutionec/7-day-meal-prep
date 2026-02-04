@@ -1935,3 +1935,202 @@ document.addEventListener('DOMContentLoaded', () => {
 
 console.log('🍽️ Meal Prep Pro V2 Loaded! Enhanced with 20+ recipes and advanced features!');
 
+// ==========================================
+// Chatbot - Meal Prep Assistant
+// ==========================================
+
+const chatbotResponses = {
+    greetings: [
+        "Hello! 👋 How can I help you with meal prep today?",
+        "Hi there! Ready to plan some delicious meals? 🍽️",
+        "Hey! I'm here to help with recipes, nutrition, and meal planning!"
+    ],
+    breakfast: [
+        "🍳 **Great breakfast ideas:**\n• Avocado Toast with Poached Eggs (420 cal)\n• Greek Yogurt Parfait (320 cal)\n• Protein Power Pancakes (380 cal)\n• Overnight Oats (290 cal)\n\nJust drag any recipe to your calendar!",
+        "For a healthy breakfast, try our Smoothie Power Bowl or Veggie Scramble! Both are packed with nutrients and easy to prep. 🌅"
+    ],
+    lunch: [
+        "🥗 **Lunch favorites:**\n• Grilled Chicken Caesar Salad (450 cal)\n• Quinoa Buddha Bowl (520 cal)\n• Turkey & Avocado Wrap (380 cal)\n• Asian Chicken Lettuce Wraps (320 cal)\n\nPerfect for meal prep containers!",
+        "For a quick lunch, the Turkey & Avocado Wrap takes only 10 minutes! Or prep a Mediterranean Pasta Salad that lasts all week. 🥙"
+    ],
+    dinner: [
+        "🍽️ **Dinner suggestions:**\n• Herb-Crusted Salmon (580 cal, 45g protein)\n• Teriyaki Chicken Stir Fry (480 cal)\n• Thai Green Curry (485 cal)\n• Garlic Butter Shrimp Pasta (550 cal)\n\nAll great for batch cooking!",
+        "Try our Classic Spaghetti Bolognese for a family-friendly dinner, or go light with Colorful Veggie Tacos! 🌮"
+    ],
+    snack: [
+        "🍎 **Healthy snacks:**\n• Protein Power Smoothie (280 cal, 25g protein)\n• Hummus & Veggie Platter (180 cal)\n• Energy Trail Mix (240 cal)\n• Apple Slices with Almond Butter (210 cal)\n\nPerfect between meals!",
+        "Keep cut veggies and hummus ready for quick snacking. Trail mix is great for on-the-go energy! 🥜"
+    ],
+    protein: [
+        "💪 **High protein meals:**\n• Herb-Crusted Salmon - 45g protein\n• Grilled Chicken Caesar - 42g protein\n• Teriyaki Chicken Stir Fry - 38g protein\n• Garlic Butter Shrimp Pasta - 35g protein\n\nAim for 1.6-2.2g protein per kg bodyweight if you're active!",
+        "For high protein breakfast, try our Protein Power Pancakes (28g) or Veggie Scramble (20g). Great for muscle recovery! 🏋️"
+    ],
+    vegetarian: [
+        "🥬 **Vegetarian options:**\n• Quinoa Buddha Bowl\n• Mediterranean Pasta Salad\n• Colorful Veggie Tacos\n• Greek Yogurt Parfait\n• Overnight Oats\n\nAll delicious and meat-free!",
+        "We have plenty of vegetarian recipes! Check the Recipes tab and use the 'Vegetarian' filter to see them all. 🌱"
+    ],
+    tips: [
+        "📝 **Meal Prep Tips:**\n\n1️⃣ **Sunday prep** - Cook proteins and grains in bulk\n2️⃣ **Use containers** - Glass containers keep food fresh longer\n3️⃣ **Prep in stages** - Wash, chop, then cook\n4️⃣ **Label everything** - Include date and contents\n5️⃣ **Refrigerator rules** - Most meals last 4-5 days",
+        "**Pro tip:** Start with 3 recipes per week, then scale up. Prep similar ingredients together to save time! ⏱️"
+    ],
+    shopping: [
+        "🛒 Go to the **Shopping** tab to see your complete grocery list! It's automatically generated based on your meal plan. You can:\n• Check off items as you shop\n• Export to clipboard\n• Order directly from services like Instacart or Amazon Fresh",
+        "**Shopping tip:** Check your pantry first! The shopping list shows estimated costs and groups items by category. 📋"
+    ],
+    calories: [
+        "📊 Check the **Dashboard** tab for detailed nutrition analytics! You'll see:\n• Total weekly calories\n• Daily calorie breakdown\n• Macronutrient distribution (protein, carbs, fats)\n• Meal category summary",
+        "For weight loss, aim for a 300-500 calorie deficit. For maintenance, most adults need 1800-2500 calories depending on activity level. 🎯"
+    ],
+    quick: [
+        "⚡ **Quick meals under 15 minutes:**\n• Greek Yogurt Parfait (5 min)\n• Overnight Oats (5 min prep)\n• Hummus & Veggie Platter (5 min)\n• Turkey & Avocado Wrap (10 min)\n• Smoothie Power Bowl (8 min)\n\nPerfect for busy days!",
+        "Use the '⚡ Quick Prep' filter in the Recipes tab to see all meals under 15 minutes! Great for busy weeknights. 🏃"
+    ],
+    help: [
+        "🤖 **I can help you with:**\n\n• 🍳 Breakfast, lunch, dinner, snack ideas\n• 💪 High protein meal suggestions\n• 🥬 Vegetarian options\n• 📝 Meal prep tips and tricks\n• 🛒 Shopping list help\n• 📊 Calorie and nutrition info\n• ⚡ Quick meal suggestions\n\nJust ask away!",
+        "Try asking me about specific meals, nutrition tips, or how to use the app features. I'm here to make meal planning easier! 😊"
+    ],
+    default: [
+        "I'm not sure about that, but I can help with recipes, nutrition tips, meal prep advice, and using the app. Try asking about breakfast ideas or meal prep tips! 🍽️",
+        "Hmm, let me think... Try asking about specific meals like 'breakfast ideas' or 'high protein meals'. I'm great at food questions! 😄",
+        "I specialize in meal prep! Ask me about recipes, nutrition, shopping lists, or cooking tips. What would you like to know? 🧑‍🍳"
+    ]
+};
+
+function initializeChatbot() {
+    const fab = document.getElementById('chatbot-fab');
+    const container = document.getElementById('chatbot-container');
+    const closeBtn = document.getElementById('chatbot-close');
+    const input = document.getElementById('chatbot-input');
+    const sendBtn = document.getElementById('chatbot-send');
+    const suggestions = document.querySelectorAll('.suggestion-chip');
+
+    if (!fab || !container) return;
+
+    // Toggle chatbot
+    fab.addEventListener('click', () => {
+        fab.classList.toggle('active');
+        container.classList.toggle('active');
+        if (container.classList.contains('active')) {
+            input.focus();
+        }
+    });
+
+    // Close chatbot
+    closeBtn.addEventListener('click', () => {
+        fab.classList.remove('active');
+        container.classList.remove('active');
+    });
+
+    // Send message on button click
+    sendBtn.addEventListener('click', () => sendChatMessage());
+
+    // Send message on Enter key
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendChatMessage();
+    });
+
+    // Suggestion chips
+    suggestions.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const question = chip.dataset.question;
+            input.value = question;
+            sendChatMessage();
+        });
+    });
+}
+
+function sendChatMessage() {
+    const input = document.getElementById('chatbot-input');
+    const messagesContainer = document.getElementById('chatbot-messages');
+    const userMessage = input.value.trim();
+
+    if (!userMessage) return;
+
+    // Add user message
+    addChatMessage(userMessage, 'user');
+    input.value = '';
+
+    // Show typing indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'typing-indicator';
+    typingDiv.innerHTML = '<span></span><span></span><span></span>';
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    // Simulate response delay
+    setTimeout(() => {
+        typingDiv.remove();
+        const response = getChatbotResponse(userMessage);
+        addChatMessage(response, 'bot');
+    }, 800 + Math.random() * 700);
+}
+
+function addChatMessage(message, sender) {
+    const messagesContainer = document.getElementById('chatbot-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}`;
+    messageDiv.innerHTML = message.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function getChatbotResponse(message) {
+    const lowerMessage = message.toLowerCase();
+
+    // Check for keywords
+    if (/hello|hi|hey|good morning|good evening/.test(lowerMessage)) {
+        return getRandomResponse('greetings');
+    }
+    if (/breakfast|morning meal|brunch/.test(lowerMessage)) {
+        return getRandomResponse('breakfast');
+    }
+    if (/lunch|midday|noon meal/.test(lowerMessage)) {
+        return getRandomResponse('lunch');
+    }
+    if (/dinner|evening meal|supper/.test(lowerMessage)) {
+        return getRandomResponse('dinner');
+    }
+    if (/snack|between meals|hungry/.test(lowerMessage)) {
+        return getRandomResponse('snack');
+    }
+    if (/protein|muscle|gym|workout|high protein/.test(lowerMessage)) {
+        return getRandomResponse('protein');
+    }
+    if (/vegetarian|veggie|no meat|plant.based|vegan/.test(lowerMessage)) {
+        return getRandomResponse('vegetarian');
+    }
+    if (/tip|advice|how to|prep|prepare|meal prep/.test(lowerMessage)) {
+        return getRandomResponse('tips');
+    }
+    if (/shop|grocery|groceries|buy|list|ingredient/.test(lowerMessage)) {
+        return getRandomResponse('shopping');
+    }
+    if (/calorie|calories|nutrition|macro|dashboard|analytics/.test(lowerMessage)) {
+        return getRandomResponse('calories');
+    }
+    if (/quick|fast|easy|15 min|simple|busy/.test(lowerMessage)) {
+        return getRandomResponse('quick');
+    }
+    if (/help|what can you|how do|feature|assist/.test(lowerMessage)) {
+        return getRandomResponse('help');
+    }
+    if (/thank|thanks|awesome|great|perfect/.test(lowerMessage)) {
+        return "You're welcome! 😊 Happy to help with your meal planning. Anything else you'd like to know?";
+    }
+    if (/bye|goodbye|later|see you/.test(lowerMessage)) {
+        return "Goodbye! 👋 Happy cooking and enjoy your meals! Come back anytime you need meal prep help! 🍽️";
+    }
+
+    return getRandomResponse('default');
+}
+
+function getRandomResponse(category) {
+    const responses = chatbotResponses[category];
+    return responses[Math.floor(Math.random() * responses.length)];
+}
+
+// Initialize chatbot when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initializeChatbot, 200);
+});
+

@@ -2047,6 +2047,319 @@ p {
 }
 
 /* ==========================================
+   Premium Micro-Animations
+   ========================================== */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 var(--color-primary-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px transparent;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes typing {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* ==========================================
+   Chatbot Styles
+   ========================================== */
+
+.chatbot-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg), var(--shadow-glow-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: var(--z-fixed);
+    transition: all var(--transition-base);
+    animation: pulse 2s infinite, float 3s ease-in-out infinite;
+}
+
+.chatbot-fab:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl), 0 0 30px var(--color-primary-glow);
+}
+
+.chatbot-fab.active {
+    animation: none;
+    transform: rotate(45deg);
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 380px;
+    max-height: 500px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    display: none;
+    flex-direction: column;
+    z-index: var(--z-modal);
+    overflow: hidden;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.chatbot-container.active {
+    display: flex;
+}
+
+.chatbot-header {
+    background: var(--gradient-primary);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.chatbot-header h3 {
+    margin: 0;
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.chatbot-close {
+    background: hsla(0, 0%, 100%, 0.2);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.chatbot-close:hover {
+    background: hsla(0, 0%, 100%, 0.3);
+    transform: rotate(90deg);
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: var(--space-md);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-height: 350px;
+    background: var(--bg-primary);
+}
+
+.chat-message {
+    max-width: 85%;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.chat-message.bot {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: var(--radius-xs);
+}
+
+.chat-message.user {
+    background: var(--gradient-primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: var(--radius-xs);
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    align-self: flex-start;
+    border-bottom-left-radius: var(--radius-xs);
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.chatbot-input {
+    display: flex;
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+    background: var(--bg-secondary);
+    border-top: 1px solid hsla(0, 0%, 100%, 0.08);
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    border-radius: var(--radius-full);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.chatbot-input input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-glow);
+}
+
+.chatbot-input input::placeholder {
+    color: var(--text-muted);
+}
+
+.chatbot-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-lg);
+    transition: all var(--transition-fast);
+}
+
+.chatbot-send:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.chatbot-send:active {
+    transform: scale(0.95);
+}
+
+/* Quick suggestion chips */
+.chat-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-primary);
+    border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+}
+
+.suggestion-chip {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-tertiary);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.suggestion-chip:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: transparent;
+}
+
+/* ==========================================
    Responsive Design - Enhanced
    ========================================== */
 

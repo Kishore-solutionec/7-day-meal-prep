@@ -375,6 +375,33 @@
         style="position: fixed; top: 20px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: var(--space-sm);">
     </div>
 
+    <!-- Chatbot -->
+    <button class="chatbot-fab no-print" id="chatbot-fab" title="Chat with Meal Prep Assistant">
+        💬
+    </button>
+
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <h3>🤖 Meal Prep Assistant</h3>
+            <button class="chatbot-close" id="chatbot-close">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="chat-message bot">
+                Hi! 👋 I'm your Meal Prep Assistant. Ask me about recipes, nutrition tips, or meal planning!
+            </div>
+        </div>
+        <div class="chat-suggestions" id="chat-suggestions">
+            <button class="suggestion-chip" data-question="Suggest a healthy breakfast">🍳 Breakfast ideas</button>
+            <button class="suggestion-chip" data-question="What's a quick dinner?">🍽️ Quick dinner</button>
+            <button class="suggestion-chip" data-question="Tips for meal prep">📝 Meal prep tips</button>
+            <button class="suggestion-chip" data-question="High protein meals">💪 High protein</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Ask me anything..." autocomplete="off">
+            <button class="chatbot-send" id="chatbot-send">➤</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 
