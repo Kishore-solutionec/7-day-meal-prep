@@ -1,118 +1,290 @@
-# 🍽️ 7-Day Meal Prep Planner
+# 🍽️ Meal Prep Pro V2 - Enhanced Edition
 
-A beautiful, modern web application for planning your weekly meals with drag-and-drop functionality, automatic shopping list generation, and nutritional tracking.
+An advanced 7-day meal planning application with premium UI, nutrition analytics, and smart features.
 
-## ✨ Features
+## ✨ What's New in V2
 
-- **📅 7-Day Calendar View** - Visual weekly planner with drag-and-drop meal assignment
-- **🍳 Recipe Library** - 12+ curated recipes with full nutritional information
-- **🛒 Smart Shopping List** - Automatically generated from your meal plan
-- **🌙 Dark/Light Mode** - Toggle between stunning themes
-- **💾 Auto-Save** - Your meal plans are saved automatically to your browser
-- **🔍 Search & Filter** - Quickly find recipes by name or category
-- **📱 Responsive Design** - Works beautifully on desktop, tablet, and mobile
+### 🎨 Enhanced UI
+- **Premium Design**: Advanced glassmorphism, gradient mesh backgrounds, and smooth animations
+- **Tab Navigation**: Organized interface with Calendar, Dashboard, Recipes, Timeline, and Shopping tabs
+- **Dark/Light Theme**: Seamless theme switching with beautiful color palettes
+- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
 
-## 🚀 Getting Started
+### 📊 Advanced Features
 
-1. **Open the application** - Simply double-click `index.html` or open it in your web browser
-2. **Browse recipes** - Explore the recipe library in the right sidebar
-3. **Plan your week** - Drag recipes onto any day of the week
-4. **Generate shopping list** - It updates automatically as you add meals
-5. **Save your plan** - Click "Save Plan" or it auto-saves to your browser
+#### 1. **Nutrition Analytics Dashboard**
+- Weekly calorie intake visualization
+- Macronutrient breakdown (protein, carbs, fats)
+- Daily/weekly nutritional summaries
+- Interactive bar charts
+
+#### 2. **Meal Prep Timeline**
+- Chronological cooking schedule
+- Prep time optimization
+- Estimated cooking duration
+- Step-by-step meal prep guide
+
+#### 3. **Enhanced Recipe Library**
+- **20+ Premium Recipes** including:
+  - 6 Breakfast recipes (Avocado Toast, Greek Yogurt Parfait, Protein Pancakes, etc.)
+  - 5 Lunch recipes (Caesar Salad, Buddha Bowl, Asian Lettuce Wraps, etc.)
+  - 6 Dinner recipes (Herb-Crusted Salmon, Teriyaki Stir Fry, Thai Curry, etc.)
+  - 4 Snack recipes (Protein Smoothie, Hummus Platter, Trail Mix, etc.)
+- Emoji visual representations
+- Difficulty indicators
+- Dietary tags (Vegetarian, Vegan, Keto, High Protein)
+
+#### 4. **Smart Filtering System**
+- Search by recipe name
+- Filter by category (Breakfast, Lunch, Dinner, Snacks)
+- Dietary restrictions (Vegetarian, Vegan, Keto, High Protein)
+- Quick prep filter (recipes under 15 minutes)
+- Favorites-only view
+- Grid/List view toggle
+
+#### 5. **Favorites System**
+- Mark recipes as favorites
+- Quick access to preferred meals
+- Personalized recipe recommendations
+
+#### 6. **Custom Recipe Creator**
+- Add your own recipes
+- Automatic nutritional calculation
+- Custom recipe persistence
+
+#### 7. **Smart Shopping List**
+- Organized by store categories (Produce, Meat, Dairy, Pantry, Bakery)
+- Automatic ingredient consolidation
+- Quantity tracking
+- Copy to clipboard
+- Print-friendly format
+- Interactive checkboxes
+
+### 🎯 Core Features (From V1)
+
+- **Drag-and-Drop Meal Planning**: Intuitive drag-and-drop interface
+- **7-Day Calendar**: Plan your entire week
+- **Recipe Details**: Full ingredients and cooking instructions
+- **Local Storage**: Your plans save automatically
+- **Print Export**: Print meal plans and shopping lists
+
+## 🚀 Quick Start
+
+### Option 1: Direct Open (Simplest)
+1. Navigate to the `v2-enhanced` folder
+2. Double-click `index.html`
+3. The app opens in your default browser
+
+### Option 2: Local Server (Recommended)
+```powershell
+# Navigate to the v2-enhanced directory
+cd "d:\OneDrive - Solutionec\_Projects\Training\VibeCoding\7-Day meal prep\v2-enhanced"
+
+# Start a local server (Python)
+python -m http.server 8001
+
+# OR using Node.js
+npx http-server -p 8001
+```
+
+Then open: http://localhost:8001
 
 ## 📖 How to Use
 
-### Planning Meals
-1. Find a recipe you like in the sidebar
-2. Drag it to any day of the week
-3. Drop it in the day column
-4. Repeat for all your meals!
+### 1. **Browse Recipes**
+- Click the **🍳 Recipes** tab
+- Search or filter recipes by category and dietary preferences
+- Click any recipe card to view full details
+- Star your favorites for quick access
 
-### Viewing Recipe Details
-- Click any recipe card to see full ingredients and instructions
-- View detailed nutritional breakdown
-- See prep time and serving information
+### 2. **Plan Your Week**
+- Go to the **📅 Calendar** tab
+- Drag recipe cards onto any day of the week
+- Double-click a meal to view its details
+- Click the ✕ to remove a meal
+- Click ⭐ to favorite a recipe
 
-### Managing Your Shopping List
-- Shopping list generates automatically from your planned meals
+### 3. **Track Nutrition**
+- Visit the **📊 Dashboard** tab
+- View weekly calorie totals
+- Analyze macronutrient breakdown
+- Check daily calorie charts
+
+### 4. **Meal Prep Timeline**
+- Click the **⏱️ Timeline** tab
+- See a chronological cooking schedule
+- Get prep time estimates
+- Optimize your Sunday meal prep
+
+### 5. **Generate Shopping List**
+- Go to the **🛒 Shopping** tab
+- View auto-generated categorized list
 - Check off items as you shop
-- Click "Copy List" to copy to clipboard
-- Duplicate ingredients are automatically combined
+- Copy to clipboard or print
 
-### Customizing Your Experience
-- Click the 🌙/☀️ button to toggle between dark and light themes
-- Use "Clear Plan" to start fresh
-- Your preferences and meal plans are saved automatically
+### 6. **Add Custom Recipes**
+- In the Recipes tab, click **➕ Add Custom Recipe**
+- Enter recipe details and nutrition info
+- Your custom recipes are saved locally
 
-## 🎨 Design Features
+### 7. **Save & Export**
+- Click **💾 Save Plan** to ensure your plan is saved
+- Click **📤 Export** to print your meal plan
+- All data persists in your browser
 
-- **Glassmorphism Effects** - Modern frosted glass design
-- **Smooth Animations** - Delightful transitions and hover effects
-- **Premium Typography** - Beautiful Google Fonts (Inter & Playfair Display)
-- **Vibrant Color Palette** - Purple, cyan, and pink gradients
-- **Accessibility** - Keyboard navigation and screen reader support
+## 🎨 Features Breakdown
 
-## 📋 Sample Recipes Included
+### Recipe Cards
+Each recipe includes:
+- Visual emoji representation
+- Category badge
+- Prep time and servings
+- Complete nutritional information (Calories, Protein, Carbs, Fats)
+- Difficulty level
+- Dietary tags
+- Favorite button
+- Drag-and-drop capability
 
-The app comes with 12 delicious, nutrition-balanced recipes:
+### Calendar View
+- 7-day grid layout
+- Daily calorie totals
+- Color-coded meal slots
+- Drag-and-drop zones
+- Quick remove functionality
 
-**Breakfast**
-- Avocado Toast with Eggs (420 cal)
-- Greek Yogurt Parfait (320 cal)
-- Protein Pancakes (380 cal)
+### Dashboard Analytics
+- Total weekly calories
+- Average daily calories
+- Meal count
+- Total protein intake
+- Interactive bar chart for daily calories
+- Macronutrient pie chart visualization
 
-**Lunch**
-- Grilled Chicken Salad (450 cal)
-- Quinoa Buddha Bowl (520 cal)
-- Turkey Wrap (380 cal)
+### Timeline Optimizer
+- Sorts recipes by prep time
+- Provides chronological schedule
+- Shows start time and duration
+- Displays total prep time
+- Batch cooking suggestions
 
-**Dinner**
-- Salmon with Roasted Vegetables (580 cal)
-- Chicken Stir Fry (480 cal)
-- Spaghetti Bolognese (620 cal)
-- Veggie Tacos (420 cal)
+### Shopping List
+- Categorized by store section:
+  - 🥬 Produce
+  - 🥩 Meat
+  - 🥛 Dairy
+  - 🥫 Pantry
+  - 🍞 Bakery
+- Ingredient consolidation
+- Quantity multipliers
+- Interactive checkboxes
+- Copy to clipboard
+- Print-optimized
 
-**Snacks**
-- Protein Smoothie (280 cal)
-- Hummus & Veggies (180 cal)
-- Trail Mix (240 cal)
+## 🎨 Theming
 
-## 💡 Tips
+Toggle between Dark and Light modes using the theme button in the header.
 
-- **Mix and Match** - Combine different meal types for balanced nutrition
-- **Prep in Advance** - Use the shopping list to buy everything at once
-- **Move Meals Around** - Drag meals between days to adjust your plan
-- **Save Multiple Plans** - Create different plans for different weeks
-- **Check Nutrition** - Each recipe shows calories, protein, carbs, and fats
+**Dark Mode**: Default, premium dark interface with vibrant accents
+**Light Mode**: Clean, bright interface with refined colors
+
+## 💾 Data Persistence
+
+All your data is saved locally in your browser:
+- Meal plans
+- Favorites
+- Custom recipes
+- Theme preference
+
+No account needed. No data sent to servers. Total privacy.
+
+## 🖨️ Printing
+
+Click the **📤 Export** button or use your browser's print function (Ctrl+P / Cmd+P) to print:
+- Weekly meal calendar
+- Shopping lists
+- Individual recipes
+
+The print layout is optimized with:
+- Hidden navigation elements
+- Clean, professional formatting
+- Proper page breaks
 
 ## 🔧 Technical Details
 
-- **No Installation Required** - Pure HTML, CSS, and JavaScript
-- **No Backend Needed** - Everything runs in your browser
-- **Privacy First** - All data stays on your device
-- **Offline Capable** - Works without internet after first load
-- **Modern Browsers** - Works with Chrome, Firefox, Safari, Edge
+**Built With:**
+- Pure HTML5
+- Modern CSS3 (Grid, Flexbox, Custom Properties)
+- Vanilla JavaScript (ES6+)
+- No external dependencies
+- No build process required
 
-## 📂 Project Files
+**Browser Compatibility:**
+- Chrome/Edge (recommended)
+- Firefox
+- Safari
+- Any modern browser with ES6 support
 
-- `index.html` - Main application file
-- `styles.css` - Complete design system and styling
-- `app.js` - Application logic and recipe database
+**Performance:**
+- Lightweight (<200KB total)
+- Instant loading
+- Smooth animations (60fps)
+- Responsive on all devices
 
-## 🎯 Future Enhancement Ideas
+## 📱 Mobile Support
 
-- Add custom recipes
-- Export/import meal plans
-- Calorie tracking dashboard
-- Recipe images
-- Print shopping list
-- Dietary filters (vegan, keto, etc.)
-- Recipe ratings
+The application is fully responsive:
+- Touch-friendly drag and drop
+- Optimized layouts for small screens
+- Readable typography on mobile
+- Fast performance on mobile devices
 
-## 🙏 Enjoy Your Meal Prep!
+## 🆚 V1 vs V2 Comparison
 
-Start planning your week and eating healthier today! Simply open `index.html` and begin organizing your meals. Happy meal prepping! 🎉
+| Feature | V1 | V2 Enhanced |
+|---------|----|----|
+| Recipes | 12 | 20+ |
+| UI Design | Good | Premium |
+| Navigation | Single Page | Tab-based |
+| Analytics | None | Full Dashboard |
+| Timeline | No | Yes |
+| Custom Recipes | No | Yes |
+| Dietary Filters | Basic | Advanced |
+| Shopping List | Simple | Categorized |
+| Charts | No | Multiple |
+| Quick Filters | Limited | Extensive |
+
+## 🎯 Use Cases
+
+- **Fitness Enthusiasts**: Track macros and plan high-protein meals
+- **Busy Professionals**: Optimize Sunday meal prep time
+- **Health-Conscious**: Monitor weekly nutrition intake
+- **Families**: Plan balanced meals for the week
+- **Budget-Conscious**: Generate exact shopping lists to avoid waste
+
+## 🐛 Troubleshooting
+
+**Meals not saving?**
+- Ensure JavaScript is enabled
+- Check browser localStorage is not disabled
+- Click "Save Plan" button
+
+**Drag and drop not working?**
+- Use a modern browser
+- Ensure touch events are enabled on mobile
+- Try refreshing the page
+
+**Theme not switching?**
+- Clear browser cache
+- Check if localStorage is enabled
+
+## 📄 License
+
+Free to use for personal and educational purposes.
+
+## 🙏 Credits
+
+Created with ❤️ as an enhanced meal planning solution.
 
 ---
 
-**Made with ❤️ for better meal planning**
+**Enjoy your meal planning journey! 🍽️✨**
