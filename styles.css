@@ -271,21 +271,17 @@ p {
    ========================================== */
 
 .app-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .app-container {
-    max-width: 100%;
-    width: 100%;
+    max-width: 1600px;
+    width: 98%;
     margin: 0 auto;
-    padding: var(--space-sm);
+    padding: var(--space-md);
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
     animation: fadeIn 0.6s ease-out;
 }
 
@@ -435,15 +431,12 @@ p {
 /* Tab Content */
 .tab-content {
     display: none;
-    flex: 1;
-    overflow: auto;
     animation: fadeInUp 0.4s ease-out;
     width: 100%;
 }
 
 .tab-content.active {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 /* Ensure all tab content sections have consistent max-width */
@@ -459,8 +452,8 @@ p {
 .glass-card {
     background: var(--bg-glass);
     backdrop-filter: var(--blur-lg);
-    border-radius: var(--radius-lg);
-    padding: var(--space-md);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
     box-shadow: var(--shadow-lg);
     border: 1px solid hsla(0, 0%, 100%, 0.08);
     transition: all var(--transition-base);
@@ -504,8 +497,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-sm);
-    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.08);
 }
 
@@ -840,15 +833,14 @@ p {
 
 .calendar-layout {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: var(--space-md);
-    flex: 1;
-    overflow: hidden;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-lg);
 }
 
 .recipe-sidebar {
-    position: relative;
-    max-height: 100%;
+    position: sticky;
+    top: var(--space-lg);
+    max-height: calc(100vh - 220px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1000,9 +992,6 @@ p {
 
 .calendar-section {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
 }
 
 .calendar-section:hover {
@@ -1034,24 +1023,19 @@ p {
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: var(--space-sm);
-    flex: 1;
-    overflow: auto;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
 }
 
 .day-column {
     background: var(--bg-glass-light);
     backdrop-filter: var(--blur-md);
-    border-radius: var(--radius-md);
-    padding: var(--space-sm);
-    border: 1px solid hsla(0, 0%, 100%, 0.08);
-    min-height: 150px;
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
+    border-radius: var(--radius-xl);
+    padding: var(--space-md);
+    border: 2px dashed hsla(0, 0%, 100%, 0.1);
+    min-height: 320px;
     transition: all var(--transition-base);
     position: relative;
-    overflow: auto;
 }
 
 .day-column::before {
